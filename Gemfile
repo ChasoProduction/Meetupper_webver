@@ -37,8 +37,8 @@ gem 'bootstrap-will_paginate', '1.0'
 gem 'carrierwave', '~> 1.2'
 gem 'mini_magick', '~> 4.7'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+#jquery
+gem 'jquery-rails', '~> 4.3'
 
 group :development, :test do
   gem 'sqlite3', '~> 1.3'
