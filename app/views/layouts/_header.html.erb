@@ -1,0 +1,28 @@
+<div class = 'container'>
+  <nav class = 'navbar navbar-light bg-light navbar-expand-lg fixed-top'>
+    <a class = 'bavbar-brand' href = '#'>
+      Meetupper(icon) <%#　本来はロゴが入る %>
+    </a>
+    <ul class = 'navbar-nav ml-auto'>
+      <li class = 'nav-item'>
+        <%= link_to 'Schedule', '#', class:'nav-link' %>
+      </li>
+      <li class = 'nav-item'>
+        <%= link_to 'Friends', '#', class:'nav-link' %>
+      </li>
+      <li class = 'nav-item'>
+        <%= link_to 'Group Management', '#', class:'nav-link' %>
+      </li>
+      <li class = 'nav-item dropdown'>
+        <a href = '#' class = 'dropdown-toggle nav-link' data-toggle = 'dropdown'>
+          Settings
+        </a>
+        <div class = 'dropdown-menu dropdown-menu-right'>
+          <%= link_to 'A', '#', class:'dropdown-item' %>
+          <%= link_to 'B', '#', class:'dropdown-item' %>
+          <%= link_to 'C', '#', class:'dropdown-item' %>
+        </div>
+      </li>
+    </ul>
+  </nav>
+</div>

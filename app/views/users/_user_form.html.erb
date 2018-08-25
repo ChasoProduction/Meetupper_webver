@@ -13,5 +13,5 @@
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation, class:'form-control' %>
 
-  <%= f.submit 'Create Account', class:'btn btn-primary' %>
+  <%= f.submit yield(:submit_message), class:'btn btn-primary' %>
 <% end %>
