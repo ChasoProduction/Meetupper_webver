@@ -9,5 +9,13 @@ class User < ApplicationRecord
   #パスワードは半角英数小文字、大文字、数字8~100
   VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[A-Z])(?=.*?\d)[a-zA-Z\d]{8,100}+\z/
   validates :password, presence:true,
-          format: { with:VALID_PASSWORD_REGEX }
+          format: { with:VALID_PASSWORD_REGEX },
+          allow_nil:true
+
+  #ハッシュを渡す
+  def User.digest(string)
+    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+                                        BCrypt::Engine.cost
+    BCrypt::Password.create(string, cost:cost)
+  end
 end
