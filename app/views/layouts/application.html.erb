@@ -5,9 +5,18 @@
     <%= render 'layouts/head' %>
   </head>
   <body>
-    <header>
-      <%= render 'layouts/header' %>
-    </header>
-    <%= yield %>
+    <%= render 'layouts/header' %>
+
+    <main>
+      <div class = 'container'>
+        <% flash.each do |message_type, message| %>
+          <div class = 'alert alert-<%= message_type %>'>
+            <%= message %>
+          </div>
+        <% end %>
+        <%= yield %>
+      </div>
+    </main>
+
   </body>
 </html>
