@@ -1,0 +1,28 @@
+<%# pc版用 %>
+<div class = 'd-none d-md-block'>
+  <nav class = 'navbar navbar-light bg-light navbar-expand-md fixed-top'>
+    <%= link_to 'Meetupper(icon)', root_path, class:'navbar-brand' %>
+    <ul class = 'navbar-nav ml-auto'>
+      <li class = 'nav-item'>
+        <%= link_to 'Log in', login_path, class:'nav-link' %>
+      </li>
+      <li class = 'nav-item dropdown'>
+        <a href = '#' class = 'dropdown-toggle nav-link' data-toggle = 'dropdown'>
+          Settings
+        </a>
+        <div class = 'dropdown-menu dropdown-menu-right'>
+          <%= link_to 'Sign up', new_user_path, class:'dropdown-item' %>
+          <%= link_to 'B', '#', class:'dropdown-item' %>
+          <%= link_to 'C', '#', class:'dropdown-item' %>
+        </div>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<%# スマホ用 %>
+<div class = 'd-block d-md-none'>
+  <nav class = 'navbar navbar-light bg-light navbar-expand fixed-top'>
+    <%= link_to 'Meetupper(icon)', root_path, class:'navbar-brand' %>
+  </nav>
+</div>
