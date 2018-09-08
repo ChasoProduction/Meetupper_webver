@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180816100341) do
+ActiveRecord::Schema.define(version: 20180908055528) do
+
+  create_table "personal_schedules", force: :cascade do |t|
+    t.text "content"
+    t.integer "user_id"
+    t.datetime "starts_at"
+    t.datetime "ends_at"
+    t.integer "importance"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "starts_at"], name: "index_personal_schedules_on_user_id_and_starts_at"
+    t.index ["user_id"], name: "index_personal_schedules_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
