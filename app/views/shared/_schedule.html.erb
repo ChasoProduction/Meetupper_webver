@@ -1,0 +1,40 @@
+<div class = 'row'>
+  <% @personal_schedules.each do |personal_schedule| %>
+    <div class = 'container schedule'>
+      <div class = 'd-flex'>
+        <h2><%= personal_schedule.content %></h2>
+        <div class = 'ml-auto align-self-center', id = 'buttons'>
+          <%= link_to edit_personal_schedule_path(personal_schedule), class:'btn-sm btn-primary' do %>
+            <%= fa_icon 'edit' %>
+          <% end %>
+          <%= link_to personal_schedule_path(personal_schedule), method:'delete', class:'btn-sm btn-primary' do %>
+            <%= fa_icon 'trash' %>
+          <% end %>
+        </div>
+      </div>
+      <dl class = 'row'>
+        <dt class = 'col-3'>開始時間</dt>
+        <dd class = 'col-9'>
+          <%= personal_schedule.starts_at_format %>
+        </dd>
+
+        <dt class = 'col-3'>終了時間</dt>
+        <dd class = 'col-9'>
+          <%= personal_schedule.ends_at_format %>
+        </dd>
+
+        <dt class = 'col-3'>重要度</dt>
+        <dd class = 'col-1'>
+          <% case personal_schedule.importance %>
+          <% when 1 %>
+            <span class = 'text-danger'>高</span>
+          <% when 2 %>
+            <span class = 'text-warning'>中</span>
+          <% else %>
+            <span class = 'text-info'>低</span>
+          <% end %>
+        </dd>
+      </dl>
+    </div>
+  <% end %>
+</div>

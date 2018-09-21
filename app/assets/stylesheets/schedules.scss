@@ -1,0 +1,42 @@
+.schedule{
+  background-color: #afeeee;
+  margin-bottom: 1.5em;
+  border-radius: 10px;
+  //&:last-child{ last-child用の練習
+    //border-radius: 0;
+    //margin-bottom: 0;
+  //}
+}
+
+div#buttons{
+  a{
+    margin-right: 0.25em;
+  }
+}
+
+.schedule-form{
+  padding: 1em;
+  margin-bottom: 2em;
+  border: solid;
+  border-color: #51d3f7;
+  border-radius: 10px;
+}
+
+div.number-field{
+  input{
+    padding: 0.25em;
+    width: 5em;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+  }
+}
+
+div.form-group{
+  select{
+    margin-right: 0.25em;
+    margin-left: 0.25em;
+    &:first-of-type{
+      margin-left: 0;
+    }
+  }
+}

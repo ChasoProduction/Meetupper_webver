@@ -25,6 +25,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @personal_schedules = @user.personal_schedules.all
   end
 
   def update
@@ -51,7 +52,7 @@ class UsersController < ApplicationController
     def same_user?
       @user = User.find(params[:id])
       unless current_user == @user
-        flash[:danger] = 'You are not allowed to edit another user.'
+        flash[:danger] = 'Invalid user.'
         redirect_to user_url(current_user)
       end
     end

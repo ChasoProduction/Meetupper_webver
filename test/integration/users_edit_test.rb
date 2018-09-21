@@ -19,6 +19,8 @@ class UsersEditTest < ActionDispatch::IntegrationTest
     #正しくない情報だとeditに戻り、errorを表示させる
     post login_path, params: { session: { email:@user.email,
                                           password:'Foobar21' } }
+    assert_redirected_to @user
+    follow_redirect!
     get edit_user_path(@user)
     assert_template 'users/edit'
     patch user_path(@user), params: { user: { name:'',

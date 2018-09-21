@@ -1,3 +1,9 @@
 <% provide(:title, 'Profile') %>
 <h1><%= @user.name %></h1>
-<h2><%= @user.email %></h2>
+<div class = 'container-fluid'>
+  <%# 予定作成画面 %>
+  <%= render 'shared/schedules_form' %>
+
+  <%# 予定表示画面 %>
+  <%= render 'shared/schedule' %>
+</div>

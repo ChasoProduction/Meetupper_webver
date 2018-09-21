@@ -40,6 +40,9 @@ gem 'mini_magick', '~> 4.7'
 #jquery
 gem 'jquery-rails', '~> 4.3'
 
+#icons
+gem 'font-awesome-rails'
+
 group :development, :test do
   gem 'sqlite3', '~> 1.3'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

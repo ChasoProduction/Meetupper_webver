@@ -19,16 +19,19 @@
 sample:
   id: 1
   name: sample
+  email: sample@example.com
   password_digest: <%= User.digest('Foobar21') %>
 
 sample2:
   id: 2
   name: Chaso
+  email: Chaso@chasochaso.co.us
   password_digest: <%= User.digest('Foobar21') %>
 
 <% 48.times do |n| %>
 sample<%= n + 3 %>:
   id: <%= n + 3 %>
   name: sample_user<%= n + 1 %>
+  email: sample<%= n + 3 %>@example.com
   password_digest: <%= User.digest('Foobar21') %>
 <% end %>

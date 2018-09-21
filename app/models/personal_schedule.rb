@@ -23,6 +23,14 @@ class PersonalSchedule < ApplicationRecord
   validate :start_validate
   validate :time_validate
 
+  def starts_at_format
+    starts_at.strftime("%Y年%-m月%-d日%H:%M")
+  end
+
+  def ends_at_format
+    ends_at.strftime("%Y年%-m月%-d日%H:%M")
+  end
+
   private
     def time_validate
       if !starts_at.blank? && !ends_at.blank?
