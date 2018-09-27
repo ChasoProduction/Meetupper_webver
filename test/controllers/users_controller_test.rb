@@ -20,11 +20,6 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to login_url
   end
 
-  test "should get show" do
-    get user_path(@user)
-    assert_response :success
-  end
-
   test 'should redirect delete when not logged in' do
     assert_no_difference 'User.count' do
       delete user_path(@user)

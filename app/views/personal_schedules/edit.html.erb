@@ -1,0 +1,6 @@
+<% provide(:submit_message, '更新') %>
+<% provide(:submit_path, personal_schedule_path(@schedule)) %>
+<% provide(:submit_method, :patch) %>
+<div class = 'container' id = 'schedule-edit'>
+  <%= render 'shared/schedules_form' %>
+</div>

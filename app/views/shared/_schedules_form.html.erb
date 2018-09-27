@@ -1,7 +1,18 @@
 <div class = 'row schedule-form'>
   <div class = 'col'>
-    <%= form_for(:schedule, url:personal_schedules_path) do |f| %>
-      <%= render 'shared/error_messages' %>
+    <%= form_for(@schedule) do |f| %>
+      <% if flash[:error].present? %>
+        <div id = 'error_explanation'>
+          <div class = 'alert alert-danger'>
+            These contain <%= pluralize(flash[:error].count, 'error') %>.
+          </div>
+          <ul>
+            <% flash[:error].each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
 
       <div class = 'form-group row'>
         <%= f.label :content, '予定名', class:'col-md-2 col-form-label' %>
@@ -23,7 +34,7 @@
         <%= f.number_field :importance, min:1, max:3, step:1 %>
       </div>
 
-      <%= f.submit '登録', class:'btn btn-primary' %>
+      <%= f.submit yield(:submit_message), class:'btn btn-primary' %>
     <% end %>
   </div>
 </div>

@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to root_url
     else
-      render 'new'
+      render action: :new
     end
   end
 
@@ -23,9 +23,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def show
+  def show #scheduleのnewを兼ねる
     @user = User.find(params[:id])
-    @personal_schedules = @user.personal_schedules.all
+    @schedule = current_user.personal_schedules.build
+    @personal_schedules = @user.personal_schedules.all.order('starts_at, importance')
   end
 
   def update
